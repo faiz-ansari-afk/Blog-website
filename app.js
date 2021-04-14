@@ -1,10 +1,12 @@
+require('dotenv').config()
 const express = require("express");
 const ejs = require("ejs");
 const app = express();
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://admin:admin@cluster0.vmdiy.mongodb.net/posts", {
+// authentication error on adding dotenv to mongoose connection
+// mongoose.connect("mongodb+srv://process.env.USERNAME:process.env.PASSWORD@cluster0.vmdiy.mongodb.net/posts", {
     // local database below
-// mongoose.connect("mongodb://localhost:27017/posts", {
+mongoose.connect("mongodb://localhost:27017/posts", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
